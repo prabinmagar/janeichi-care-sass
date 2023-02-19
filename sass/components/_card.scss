@@ -1,0 +1,23 @@
+
+.card-grid{
+    &-left{
+        @include breakpoint-up(lg){
+            width: 50%;
+            padding-right: 60px;
+        }
+
+        @include breakpoint-up(xl){
+            padding-right: 100px;
+        }
+
+        @include breakpoint-up(xxl){
+            margin-right: 150px;
+        }
+    }
+
+    &-right{
+        @include breakpoint-up(lg){
+            width: 50%;
+        }
+    }
+}

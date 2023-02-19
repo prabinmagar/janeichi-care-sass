@@ -1,0 +1,42 @@
+.header{
+    .header-top{
+        min-height: 34px;
+        @include py(8px);
+        @include flex-center;
+    }
+    .header-top-info{
+        .info-item-text{
+            margin-left: 12px;
+        }
+
+        .info-item{
+            margin: 3px 0;
+            &:first-child{
+                @include breakpoint-up(sm){
+                    margin-right: 44px;
+                }
+            }
+
+            @include breakpoint-up(sm){
+                @include flush--ends;
+            }
+        }
+    }
+
+    .header-banner{
+        @include pos-relative;
+        &-item{
+            min-height: 624px;
+
+            .max-w-wrapper{
+                @include breakpoint-up(sm){
+                    max-width: 480px;
+                }
+
+                @include breakpoint-up(xxl){
+                    max-width: 626px;
+                }
+            }
+        }
+    }
+}

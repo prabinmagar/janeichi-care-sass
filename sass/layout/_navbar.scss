@@ -1,0 +1,106 @@
+.page-navbar{
+    @include py(9px);
+
+    .navbar-brand{
+        width: 111px;
+        @include d-inline-block;
+        @include breakpoint-down(lg){ width: 80px; }
+        @include breakpoint-down(sm){ width: 68px; }
+        @include breakpoint-down(xs){ width: 50px; }
+    }
+
+    .navbar-brand-and-toggler{
+        .navbar-toggler-open{
+            @include font-s(24);
+            @include breakpoint-down(lg){
+                @include d-block;
+            }
+        }
+
+        @include breakpoint-down(lg){
+            @include w-100;
+        }
+    }
+
+    .navbar-main-collapse{
+        margin-bottom: 17px;
+
+        .navbar-main-nav{
+            margin-top: 60px;
+            .nav-item{
+                margin-left: 44px;
+    
+                &-active{
+                    @include pos-relative;
+    
+                    &::after{
+                        content: "";
+                        @include pos-absolute(calc(100% + 24px), 0, null, 0);
+                        @include box(100%, 2px);
+                        @include bg-color(primary-v1);
+    
+                        @include breakpoint-down(lg){
+                            top: 85%;
+                            height: 1px;
+                        }
+                    }
+
+                    @include breakpoint-down(lg){
+                        .nav-link{
+                            color: map-get($colors, 'clr-primary-v1');
+                        }
+                    }
+                }
+    
+                @include breakpoint-down(xxl){
+                    margin-left: 32px;
+                }
+    
+                @include breakpoint-down(lg){
+                    margin-left: 0;
+                    @include py(9px);
+                }
+            }
+            
+            .nav-link{
+                @include transition-default;
+                &:hover{
+                    @include opacity(0.8);
+                }
+            }
+            
+            @include breakpoint-down(lg){
+                @include flex-direction(column);
+            }
+        }
+
+        @include breakpoint-down(lg){
+            @include pos-fixed(0, 0, null, null);
+            @include box(240px, 100%);
+            @include bg-color(white);
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            z-index: $z-mid;
+            margin-bottom: 10px;
+            @include d-flex;
+            @include align-items(flex-start);
+            @include justify-content(center);
+
+            transform: translateX(100%);
+            @include transition-default;
+
+            &.show-navbar-collapse{
+                transform: translateX(0);
+            }
+
+            .navbar-toggler-close{
+                @include d-block;
+                @include pos-absolute(16px, 16px, null, null);
+                @include font-s(24);
+            }
+        }
+
+        @include breakpoint-down(xs){
+            width: 100%;
+        }
+    }
+}

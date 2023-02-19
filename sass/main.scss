@@ -1,0 +1,26 @@
+/* ##### ABSTRACTS ##### */
+@import "abstracts/color_palette";
+@import 'abstracts/variables';
+@import 'abstracts/config';
+@import 'abstracts/functions';
+@import 'abstracts/placeholders';
+@import 'abstracts/mixins';
+/* ##### BASE ##### */
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/utilities';
+/* ##### COMPONENTS ##### */
+@import "components/button";
+@import "components/title";
+@import "components/card";
+@import "components/misc";
+/* ##### LAYOUT ##### */
+@import "layout/header";
+@import "layout/navbar";
+@import 'layout/forms';
+@import "layout/footer";
+/* ##### VENDORS ##### */
+@import "vendors/bootstrap";
+@import "vendors/slick";
+/* ##### PAGES ##### */ 
+@import "pages/index";

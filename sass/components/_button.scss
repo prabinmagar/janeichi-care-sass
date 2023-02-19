@@ -1,0 +1,58 @@
+$btn-borderRadius: 0px;
+$btn-default-bgColor: map-get($colors, 'clr-primary-v1');
+$btn-default-textColor: map-get($map: $colors, $key: "clr-white");
+$btn-default-bgColor--highlight: darken(map-get($colors, 'clr-primary-v1'), 10%);
+$btn-default-textColor--hightlight: darken(map-get($colors, 'clr-white'), 10%);
+
+$btn-primary-bgColor: map-get($colors, 'clr-primary-v1');
+$btn-primary-bgColor--highlight: darken(map-get($colors, 'clr-primary-v1'), 10%);
+
+%btn-default{
+    display: inline-block;
+    white-space: nowrap;
+    font-family: inherit;
+    font-size: 100%;
+    cursor: pointer;
+    overflow: visible;
+    @include border-none;
+    @include flush;
+    @include hard--bottom;
+    @include hard--top;
+    text-align: center;
+    user-select: none;
+    @include transition-default;
+}
+
+.btn{
+    @extend %btn-default;
+    @include px(25px);
+    @include py(10px);
+    border-radius: $btn-borderRadius;
+    @include bg-color($btn-default-bgColor);
+    text-transform: uppercase;
+    @include font-w(500);
+
+    &,
+    &:link,
+    &:visited{
+        color: $btn-default-textColor;
+    }
+
+    &:hover,
+    &:active,
+    &:focus{
+        @include bg-color($btn-default-bgColor--highlight);
+    }
+
+    &:active,
+    &:focus{
+        outline: none;
+    }
+
+    &.disabled,
+    &[disabled]{
+        cursor: default;
+        background-image: none;
+        opacity: .5;
+    }
+}

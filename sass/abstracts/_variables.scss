@@ -1,0 +1,135 @@
+// font sizes
+$font-size: (
+    '4x-sm': 12,
+    'xxx-sm': 13,
+    'xx-sm': 14,
+    'x-sm': 15,
+    'sm': 16,
+    'base': 18,
+    'md': 18,
+    'lg': 20,
+    'x-lg': 24,
+    'xx-lg': 27,
+    'xxx-lg': 32,
+    '4x-lg': 48
+);
+
+// letter spacing
+// $heading-letter-spacing: 0.03em;
+// $paragraph-letter-spacing: 0.02em;
+
+// FONT WEIGHTS
+$font-weights: (
+    'thin': 100,
+    'extra-light': 200,
+    'light': 300,
+    'regular': 400,
+    'medium': 500,
+    'semi-bold': 600,
+    'bold': 700,
+    'extra-bold': 800,
+    'ultra-bold': 900
+);
+
+
+// FONT STACKS
+$font-family-exo: 'Exo', sans-serif;
+
+// BASE FONT
+$base-font-family: $font-family-exo;
+$base-font-color: $text-color;
+$base-font-size: map-get($font-size, 'base');
+$base-font-weight: map-get($font-weights, 'regular');
+$leading-base: 1.6;
+
+// FONT SIZES FOR H1 - H6
+$h1-font-size: 2 * $base-font-size;
+$h2-font-size: 1.5  * $base-font-size;
+$h3-font-size: 1.17 * $base-font-size;
+$h4-font-size: 1    * $base-font-size;
+$h5-font-size: 0.83 * $base-font-size;
+$h6-font-size: 0.67 * $base-font-size;
+
+// Z-INDEX 
+$z-low: 10;
+$z-mid: 100;
+$z-high: 1000;
+
+// TRANSITION
+$default-transition-timing: ease-in-out;
+$default-transition-duration: 300ms;
+$default-transition: all $default-transition-timing $default-transition-duration;
+
+// BREAKPOINTS
+$breakpoints-up: (
+    "xs": "480px",
+    "sm": "576px", 
+    "md": "768px", 
+    "lg": "992px", 
+    "xl": "1200px", 
+    "xxl": "1400px"
+);
+
+$breakpoints-down: (
+    "xs": "479.98px",
+    "sm": "575.98px", 
+    "md": "767.98px", 
+    "lg": "991.98px", 
+    "xl": "1199.98px", 
+    "xxl": "1399.98px"
+);
+
+$breakpoints: (
+    "phone":        400px,
+    "phone-wide":   480px,
+    "phablet":      560px,
+    "tablet-small": 640px,
+    "tablet":       768px,
+    "tablet-wide":  1024px,
+    "desktop":      1248px,
+    "desktop-wide": 1440px
+);
+
+/* Easing/Timing */
+// Cubic
+$ease--in-cubic: cubic-bezier(.55,.055,.675,.19);
+$ease--out-cubic: cubic-bezier(.215,.61,.355,1);
+$ease--in-out-cubic: cubic-bezier(.645,.045,.355,1);
+
+// Circ
+$ease--in-circ: cubic-bezier(.6,.04,.98,.335);
+$ease--out-circ: cubic-bezier(.075,.82,.165,1);
+$ease--in-out-circ: cubic-bezier(.785,.135,.15,.86);
+
+// Expo
+$ease--in-expo: cubic-bezier(.95,.05,.795,.035);
+$ease--out-expo: cubic-bezier(.19,1,.22,1);
+$ease--in-out-expo: cubic-bezier(1,0,0,1);
+
+// Quad
+$ease--in-quad: cubic-bezier(.55,.085,.68,.53);
+$ease--out-quad: cubic-bezier(.25,.46,.450,.94);
+$ease--in-out-quad: cubic-bezier(.455,.03,.515,.955);
+
+// Quart
+$ease--in-quart: cubic-bezier(.895,.03,.685,.22);
+$ease--out-quart: cubic-bezier(.165,.84,.44,1);
+$ease--in-out-quart: cubic-bezier(.77,0,.175,1);
+
+// Quint
+$ease--in-quint: cubic-bezier(.755,.05,.855,.06);
+$ease--out-quint: cubic-bezier(.23,1,.320,1);
+$ease--in-out-quint: cubic-bezier(.86,0,.07,1);
+
+// Sine
+$ease--in-sine: cubic-bezier(.47,0,.745,.715);
+$ease--out-sine: cubic-bezier(.39,.575,.565,1);
+$ease--in-out-sine: cubic-bezier(.445,.05,.55,.95);
+
+// Back
+$ease--in-back: cubic-bezier(.6,-.28,.735,.045);
+$ease--out-back: cubic-bezier(.175,.885,.32,1.275);
+$ease--in-out-back: cubic-bezier(.68,-0.55,.265,1.55);
+
+// Smooth fade
+$ease--smooth-fade: cubic-bezier(.365,.005,.355,1);

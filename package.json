@@ -1,0 +1,16 @@
+{
+  "name": "janeichi-care",
+  "version": "1.0.0",
+  "description": "janeichi-care-site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Prabin Magar",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap-icons": "^1.10.3",
+    "jquery": "^3.6.3",
+    "slick-carousel": "^1.8.1"
+  }
+}

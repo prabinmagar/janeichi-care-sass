@@ -1,0 +1,40 @@
+
+%title{
+    @include font($font-family-exo);
+    color: $heading-color;
+    @include font-w("semi-bold");
+}
+
+.title{
+    &-sm{
+        @extend %title;
+        @include font-s(18, normal, 0.05);
+        @include breakpoint-up(sm){ @include font-s(20); }
+        @include breakpoint-up(lg){ @include font-s(24); }
+        @include breakpoint-up(xxl){ @include font-s(26); }
+    }
+    
+    &-base{
+        @extend %title;
+        @include font-s(map-get($font-size, "base"));
+        @include breakpoint-up(sm){ @include font-s(map-get($font-size, "lg")); }
+        @include breakpoint-up(lg){ @include font-s(map-get($font-size, "x-lg")); }
+        @include breakpoint-up(xxl){ @include font-s(map-get($font-size, "xx-lg")); }
+    }
+
+    &-lg{
+        @extend %title;
+        @include font-s(map-get($font-size, "lg"));
+        @include breakpoint-up(sm){ @include font-s(map-get($font-size, "x-lg")); }
+        @include breakpoint-up(lg){ @include font-s(map-get($font-size, "xx-lg")); }
+        @include breakpoint-up(xxl){ @include font-s(map-get($font-size, "xxx-lg")); }
+    }
+
+    &-xl{
+        @extend %title;
+        @include font-s(map-get($font-size, "x-lg"));
+        @include breakpoint-up(sm){ @include font-s(map-get($font-size, "xx-lg")); }
+        @include breakpoint-up(lg){ @include font-s(map-get($font-size, "xxx-lg")); }
+        @include breakpoint-up(xxl){ @include font-s(map-get($font-size, "4x-lg")); }
+    }
+}

@@ -1,0 +1,72 @@
+
+.slick-dots{
+    z-index: 10;
+    bottom: 43px;
+    li{
+        button{
+            &::before{
+                font-size: 18px;
+                color: #290954;
+            }
+        }
+
+        &.slick-active{
+            button{
+                &::before{
+                    @include opacity(1);
+                }
+            }
+        }
+    }
+}
+
+.banner-slider{
+    %slick-arrow-default{
+        font-family: "bootstrap-icons";
+        color: map-get($colors, 'clr-chrysler-blue');
+        font-weight: bold;
+        @include font-s(36);
+
+        @include breakpoint-down(lg){
+            @include font-s(32);
+        }
+    }
+
+    .slick-next{
+        right: 16px;
+        &::before{
+            content: "\F285";
+            @extend %slick-arrow-default;
+        }
+    }
+
+    .slick-prev{
+        left: 16px;
+        z-index: 5;
+        &::before{
+            content: "\F284";
+            @extend %slick-arrow-default;
+        }
+    }
+}
+
+.concern-slider{
+    .slick-dots{
+        li{
+            button{
+                &::before{
+                    font-size: 18px;
+                    color: map-get($colors, 'clr-white');
+                }
+            }
+    
+            &.slick-active{
+                button{
+                    &::before{
+                        @include opacity(1);
+                    }
+                }
+            }
+        }
+    }
+}

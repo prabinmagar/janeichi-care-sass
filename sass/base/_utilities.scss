@@ -1,0 +1,114 @@
+#page-wrapper{
+    overflow-x: hidden;
+}
+
+// mixin for colors and background generation
+@mixin gen-props($prefix, $property){
+    @each $color-name, $color in $colors{
+        $temp-color-name: str-replace($color-name, "clr-", "");
+        #{$prefix}-#{$temp-color-name}{
+            #{$property}: $color
+        }
+    }
+}
+
+// mixin for font weights
+@mixin gen-font-weight($prefix, $property){
+    @each $weight-name, $weight in $font-weights{
+        $i: index(($font-weights), ($weight-name $weight));
+        #{$prefix}-#{$i}{
+            #{$property}: $weight;
+        }
+    }
+}
+
+// mixin for opacity
+@mixin gen-opacity($prefix, $property){
+    @for $i from 1 through 9{
+        #{$prefix}-0#{$i}{
+            #{$property}: unquote("0.")#{$i};
+        }
+    }
+}
+
+.op-none{ opacity: 1!important; }
+
+// mixin for font sizes
+@mixin gen-font($prefix, $property){
+    @each $size-name, $size in $font-size{
+        #{$prefix}-#{$size-name}{
+            #{$property}: unquote($size + "px");
+        }
+    }
+}
+
+// color generation
+@include gen-props(".text", "color");
+// background color generation
+@include gen-props(".bg", "background-color");
+// font weights generations
+@include gen-font-weight('.fw', "font-weight");
+// opacity generation
+@include gen-opacity(".op", "opacity");
+// font size generation
+@include gen-font(".fs", "font-size");
+
+
+.font{
+    &-firasans{ font-family: $font-family-exo;}
+}
+
+// image cover
+.img-cover img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+// no wrap 
+.no-wrap{ white-space: nowrap; }
+
+// animation and transition stopper 
+.resize-animation-stopper * {
+    animation: none !important;
+    transition: none !important;
+}
+
+// text justify
+.text-justify{ text-align: justify; }
+
+@include breakpoint-up(sm){
+    .text-sm-justify{ text-align: justify}
+}
+
+@include breakpoint-up(md){
+    .text-md-justify{ text-align: justify}
+}
+
+@include breakpoint-up(lg){
+    .text-lg-justify{ text-align: justify}
+}
+
+@include breakpoint-up(xl){
+    .text-xl-justify{ text-align: justify}
+}
+
+// misc
+.is-hidden{ @include hidden; }
+.cf{ @include cf; }
+
+// height
+.vh-100{ height: 100vh!important; }
+
+.min-width-auto{ min-width: auto!important; }
+
+
+// content stylings
+.content-styling{
+    p{
+        @include p-text-base;
+        @include opacity(0.7);
+        @include flush--bottom;
+    }
+}

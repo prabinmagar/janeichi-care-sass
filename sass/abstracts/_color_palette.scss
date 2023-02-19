@@ -1,0 +1,24 @@
+/* GLOBAL COLOR PALETTE */
+
+/* ==== Generic colors ==== */
+
+$colors: (
+    clr-primary-v1: #6500EC,
+    clr-indigo: #380B66,
+    clr-veronica: #A500F5,
+    clr-chrysler-blue: #5C1DC9,
+    clr-black: #000000,
+    clr-white: #ffffff,
+    clr-licorice: #170A0A
+);
+
+/* ==== Common colors ==== */
+$heading-color: map-get($colors, "clr-indigo");
+$text-color: map-get($colors, "clr-black");
+
+
+/* ==== Links colors ==== */
+$clr-link-default: map-get($colors, "clr-black");
+$clr-link-visited: lighten(map-get($colors, "clr-black"), 15%);
+$clr-link-hover: lighten(map-get($colors, "clr-black"), 15%);
+$clr-link-active: lighten(map-get($colors, "clr-black"), 15%);
