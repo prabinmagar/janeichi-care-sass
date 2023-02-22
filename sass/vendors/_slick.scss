@@ -20,18 +20,34 @@
     }
 }
 
-.banner-slider{
-    %slick-arrow-default{
-        font-family: "bootstrap-icons";
-        color: map-get($colors, 'clr-chrysler-blue');
-        font-weight: bold;
-        @include font-s(36);
+%slick-arrow-default{
+    font-family: "bootstrap-icons";
+    color: map-get($colors, 'clr-chrysler-blue');
+    font-weight: bold;
+    @include font-s(36);
 
-        @include breakpoint-down(lg){
-            @include font-s(32);
-        }
+    @include breakpoint-down(lg){
+        @include font-s(32);
     }
+}
 
+.slick-next{
+    &::before{
+        content: "\F285";
+        @extend %slick-arrow-default;
+    }
+}
+
+.slick-prev{
+    z-index: 5;
+    &::before{
+        content: "\F284";
+        @extend %slick-arrow-default;
+    }
+}
+
+
+.banner-slider{
     .slick-next{
         right: 16px;
         &::before{
@@ -39,7 +55,7 @@
             @extend %slick-arrow-default;
         }
     }
-
+    
     .slick-prev{
         left: 16px;
         z-index: 5;
@@ -68,5 +84,84 @@
                 }
             }
         }
+    }
+
+    .slick-prev{
+        left: -38px;
+        z-index: 5;
+        &::before{
+            content: "\F284";
+            @extend %slick-arrow-default;
+        }
+    }
+}
+
+.feedback-slider{
+    .slick-next{
+        right: auto;
+        left: 80px;
+        top: calc(100% + 27px);
+        &::before{
+            content: "\F285";
+            @extend %slick-arrow-default;
+            @include font-s(20);
+        }
+    }
+    
+    .slick-prev{
+        left: -4px;
+        z-index: 5;
+        top: calc(100% + 27px);
+        &::before{
+            content: "\F284";
+            @extend %slick-arrow-default;
+            @include font-s(20);
+        }
+    }
+}
+
+.card-box-slider{
+    .slick-next{
+        right: -16px;
+
+        @include breakpoint-down(md){
+            right: 32px;
+        }
+    }
+    
+    .slick-prev{
+        left: -30px;
+
+        @include breakpoint-down(md){
+            left: 20px;
+        }
+    }
+}
+
+.insta-slider{
+    .slick-next{
+        right: 16px;
+
+        @include breakpoint-down(md){
+            right: 32px;
+        }
+    }
+    
+    .slick-prev{
+        left: 0px;
+
+        @include breakpoint-down(md){
+            left: 20px;
+        }
+    }
+}
+
+.review-slider{
+    .slick-next{
+        right: 14px;
+    }
+    
+    .slick-prev{
+        left: 0px;
     }
 }

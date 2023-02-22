@@ -38,3 +38,12 @@
         @include breakpoint-up(xxl){ @include font-s(map-get($font-size, "4x-lg")); }
     }
 }
+
+
+.sc-title{
+    margin-bottom: 62px;
+
+    @include breakpoint-down(lg){
+        margin-bottom: 36px;
+    }
+}

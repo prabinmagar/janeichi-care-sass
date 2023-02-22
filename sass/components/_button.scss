@@ -55,4 +55,41 @@ $btn-primary-bgColor--highlight: darken(map-get($colors, 'clr-primary-v1'), 10%)
         background-image: none;
         opacity: .5;
     }
+
+    &.btn-transparent{
+        @include bg-transparent;
+        @include border(map-get($colors, 'clr-veronica')!important);
+
+        .btn-text{
+            color: map-get($colors, 'clr-veronica');
+            @include transition-default;
+        }
+
+        &:hover{
+            background-color: map-get($colors, 'clr-veronica')!important;
+
+            .btn-text{
+                color: map-get($colors, 'clr-white')!important;
+            }
+        }
+    }
+}
+
+.btn.btn-wide{
+    @include w-100;
+    @include border(map-get($colors, 'clr-veronica')!important);
+    @include bg-color(white);
+
+    .btn-text{
+        color: map-get($colors, 'clr-primary-v1');
+        @include transition-default;
+    }
+
+    &:hover{
+        @include bg-color(veronica);
+
+        .btn-text{
+            color: map-get($colors, 'clr-white');
+        }
+    }
 }

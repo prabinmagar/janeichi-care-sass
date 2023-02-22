@@ -19,5 +19,43 @@
         @include breakpoint-up(lg){
             width: 50%;
         }
+        
+        .content-styling{
+            p{
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+.card-box{
+    margin-right: 10px;
+    margin-left: 10px;
+
+    &-slider{
+        margin-right: -10px;
+        margin-left: -10px;
+    }
+
+    &-img{
+        height: 440px;
+        @include overflow-hidden;
+
+        img{
+            @include transition-default;
+        }
+
+        &:hover{
+            img{
+                transform: scale(1.1);
+            }
+        }
+    }
+    .btn{
+        margin-top: 19px;
+    }
+
+    &-body{
+        padding-top: 35px;
     }
 }

@@ -3,13 +3,14 @@
 .sc-category{
     @include py(63px);
 
-    .sc-title{
-        margin-bottom: 46px;
+    @include breakpoint-down(lg){
+        @include py(40px);
     }
 
     .category-list{
         margin-right: -12px;
         margin-left: -12px;
+
         .category-item{
             width: calc(16.6666% - 24px);
             margin: 12px;
@@ -56,7 +57,6 @@
 
 .sc-concern{
     .concern-list{
-        margin-top: 57px; 
         .concern-item{
             height: 447px;
             @include pos-relative;
@@ -104,19 +104,31 @@
 }
 
 .sc-feedback{
+    @include py(100px);
+    @include breakpoint-down(lg){
+        @include py(40px);
+    }
+
     .card-grid{
         &-left{
             .title-light{
                 @include font-w(400!important);
                 margin-bottom: 12px;
             }
+        }
 
+        .feedback-item{
             .content-styling{
                 margin-bottom: 63px;
+
+                @include breakpoint-down(lg){
+                    margin-bottom: 32px;
+                }
             }
         }
 
         &-right{
+            margin-top: 80px!important;
             .item-img{
                 &-first{
                     height: 371px;
@@ -134,6 +146,174 @@
 
                     @include breakpoint-up(sm){
                         margin-left: 5px;
+                    }
+                }
+            }
+
+            @include breakpoint-up(lg){
+                margin-top: 0!important;
+            }
+        }
+    }
+}
+
+.sc-sellers{
+    @include py(62px);
+
+    @include breakpoint-down(lg){
+        @include py(40px);
+    }
+    .card-box-title{
+        @include px(38px);
+    }
+}
+
+.sc-promise{
+    padding-top: 153px;
+    padding-bottom: 86px;
+
+    @include breakpoint-down(lg){
+        @include py(40px);
+    }
+
+    &-wrapper{
+        @include pos-relative;
+    }
+
+    .card-grid-right{
+        h3.title-base{
+            @include font-w(400);
+        }
+
+        .btn{
+            margin-top: 40px;
+        }
+    }
+
+    .card-grid-left{
+        @include flush--right;
+    }
+
+    .shape-1{
+        @include pos-absolute(null, null, 0, 0);
+        z-index: -2!important;
+    }
+}
+
+.sc-insta{
+    @include py(83px);
+
+    @include breakpoint-down(lg){
+        @include py(40px);
+    }
+
+    .insta-list{
+        .insta-item-wrapper{
+            @include overflow-hidden;
+            @include px(6px);
+            @include pos-relative;
+
+            &:hover{
+                .insta-item-icon{
+                    @include opacity(1);
+                }
+
+                .insta-item{
+                    &::after{
+                        @include opacity(1);
+                    }
+                }
+            }
+        }
+
+        .insta-item{
+            @include box(373px, 249px);
+            @include overflow-hidden;
+            @include border-radius(4px);
+            @include pos-relative;
+
+            &-icon{
+                @include pos-absolute(50%, null, null, 50%, 10);
+                transform: translate(-50%, -50%);
+                @include font-s(25);
+                @include opacity(0);
+                @include transition-default;
+            }
+
+            &::after{
+                content: "";
+                @include pos-absolute(0, null, null, 0);
+                @include box(100%);
+                background: rgba(255, 255, 255, 0.5);
+                backdrop-filter: blur(0px);
+                -webkit-backdrop-filter: blur(0px);
+                @include opacity(0);
+                @include transition-default;
+            }
+        }
+    }
+}
+
+.sc-review{
+    padding-top: 161px;
+    padding-bottom: 143px;
+
+    .review-list{
+        margin-bottom: 16px;
+        .review-item{
+            @include p(62px, 29px, 25px, 42px);
+            @include border-radius(5px);
+            @include mx(32.5px);
+            @include grid-template-columns(123px auto);
+            column-gap: 36px;
+            @include border(map-get($colors, 'clr-veronica'));
+
+            @include breakpoint-down(xxl){
+                @include grid-template-columns(80px auto);
+            }
+
+            @include breakpoint-down(sm){
+                @include grid-template-columns(1fr);
+            }
+
+            .item-img{
+                @include box(123px);
+                @include overflow-hidden;
+                @include border(map-get($colors, 'clr-platinum'), 6px);
+                @include border-r-circle;
+
+                @include breakpoint-down(lg){
+                    @include box(70px);
+                }
+
+                @include breakpoint-down(sm){
+                    @include box(123px);
+                    margin-right: auto;
+                    margin-left: auto;
+                }
+            }
+
+            .item-text{
+                padding-left: 36px;
+
+                @include breakpoint-down(lg){
+                    padding-left: 8px;
+                }
+
+                @include breakpoint-down(sm){
+                    margin-top: 24px;
+                }
+
+                &-name{
+                    margin-top: 20px;
+                    @include pos-relative;
+
+                    &::after{
+                        content: "";
+                        @include pos-absolute(50%, null, null, -20px);
+                        @include box(4px);
+                        transform: translateY(-50%);
+                        @include bg-color(dark);
                     }
                 }
             }
